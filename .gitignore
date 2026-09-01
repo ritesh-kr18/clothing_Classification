@@ -1,0 +1,22 @@
+# Ignore the dataset directories
+train/
+test/
+validation/
+
+# Ignore Jupyter/Python cache and IDE files
+.ipynb_checkpoints/
+.virtual_documents/
+__pycache__/
+*.pyc
+
+# Ignore macOS files
+.DS_Store
+
+# Virtual environments and specific tools
+anaconda_projects/
+venv/
+env/
+.venv/
+
+# If you ONLY want to upload deployment files, you could uncomment the lines below to ignore notebooks too:
+# *.ipynb
