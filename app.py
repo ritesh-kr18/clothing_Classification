@@ -6,7 +6,6 @@ from PIL import Image
 import torch.nn.functional as F
 import os
 
-# Define the model architecture exactly as in the notebook
 class ModifiedModel(nn.Module):
     def __init__(self):
         super().__init__()
@@ -40,26 +39,21 @@ class ModifiedModel(nn.Module):
         x = self.classifier(x)
         return x
 
-# Define the dataset classes
 CLASSES = ['dress', 'hat', 'longsleeve', 'outwear', 'pants', 'shirt', 'shoes', 'shorts', 'skirt', 't-shirt']
 
-# Setup Streamlit page
 st.set_page_config(page_title="Clothing Image Classification", layout="centered")
 
 st.title("Clothing Image Classification App")
 st.write("Upload an image of clothing, and the model will predict its category.")
 
-# Cache the model loading so it doesn't reload on every interaction
 @st.cache_resource
 def load_model():
     model = ModifiedModel()
     model_path = 'clothing_model.pth'
     
-    # Check if model exists
     if not os.path.exists(model_path):
         return None
         
-    # Load the trained weights
     model.load_state_dict(torch.load(model_path, map_location=torch.device('cpu')))
     model.eval()
     return model
