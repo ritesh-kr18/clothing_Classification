@@ -1,4 +1,4 @@
-# Lab Assignment 4: Deployed Image Classification System Report
+# Deployed Image Classification System Report
 
 ## 1. Introduction
 This report details the deployment of a Convolutional Neural Network (CNN) for a 10-class clothing image classification task. The objective was to take the trained PyTorch model and deploy it via a web-based application using the Streamlit framework.
